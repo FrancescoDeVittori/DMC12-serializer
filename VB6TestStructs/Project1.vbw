@@ -1,0 +1,11 @@
+Form1 = 16, 215, 726, 870, C, 22, 29, 829, 684, C
+SimpleClass = 87, 178, 667, 825, C
+NestedClass = 135, 185, 715, 832, C
+ConstantStrings = 150, 150, 730, 797, C
+DoNotSerializeAttr = 175, 175, 755, 822, C
+SimpleArrays = 200, 200, 780, 847, C
+FixedLengthArrays = 150, 176, 730, 823, C
+CustomBaseArrays = 275, 275, 855, 922, C
+ConstantStringArrays = 300, 300, 880, 947, C
+Utils = 100, 100, 680, 747, C
+TwoDimsArrays = 225, 225, 805, 872, C

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEFFCA85-EB34-41F7-9D63-318C44574DE2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SerializationTests</RootNamespace>
+    <AssemblyName>SerializationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.1\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Structures\Arrays\TwoDimsArrays.cs" />
+    <Compile Include="Structures\SimpleStructures\ConstantStrings.cs" />
+    <Compile Include="Structures\Arrays\ConstantStringArrays.cs" />
+    <Compile Include="Structures\Arrays\CustomBaseArrays.cs" />
+    <Compile Include="Structures\Misc\DoNotSerializeAttr.cs" />
+    <Compile Include="Structures\Arrays\FixedLengthArrays.cs" />
+    <Compile Include="Tests\ConstantStringTest.cs" />
+    <Compile Include="Tests\ConstantStringsArrayTest.cs" />
+    <Compile Include="Tests\TwoDimsArraysTest.cs" />
+    <Compile Include="Tests\CustomBoundsArrayTest.cs" />
+    <Compile Include="Tests\DoNotSerializeTest.cs" />
+    <Compile Include="Tests\FixedLengthArrayTest.cs" />
+    <Compile Include="Tests\NestedClassTest.cs" />
+    <Compile Include="Tests\SimpleClassTest.cs" />
+    <Compile Include="Tests\SimpleArraysTest.cs" />
+    <Compile Include="Tests\SimpleTypesTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures\Arrays\SimpleArrays.cs" />
+    <Compile Include="Structures\Misc\MissingConstructor.cs" />
+    <Compile Include="Structures\SimpleStructures\NestedClass.cs" />
+    <Compile Include="Structures\SimpleStructures\SimpleClass.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <EmbeddedResource Include="VB6Dumps\CString1.bin" />
+    <EmbeddedResource Include="VB6Dumps\CString2.bin" />
+    <EmbeddedResource Include="VB6Dumps\CString3.bin" />
+    <EmbeddedResource Include="VB6Dumps\CString4.bin" />
+    <EmbeddedResource Include="VB6Dumps\CStringArr1.bin" />
+    <EmbeddedResource Include="VB6Dumps\CStringArr2.bin" />
+    <EmbeddedResource Include="VB6Dumps\CStringArr3.bin" />
+    <EmbeddedResource Include="VB6Dumps\CBounds1.bin" />
+    <EmbeddedResource Include="VB6Dumps\CBounds2.bin" />
+    <EmbeddedResource Include="VB6Dumps\CBounds3.bin" />
+    <EmbeddedResource Include="VB6Dumps\DoNot1.bin" />
+    <EmbeddedResource Include="VB6Dumps\FixArr1.bin" />
+    <EmbeddedResource Include="VB6Dumps\FixArr2.bin" />
+    <EmbeddedResource Include="VB6Dumps\Nested1.bin" />
+    <EmbeddedResource Include="VB6Dumps\Nested2.bin" />
+    <EmbeddedResource Include="VB6Dumps\Nested3.bin" />
+    <EmbeddedResource Include="VB6Dumps\Nested4.bin" />
+    <EmbeddedResource Include="VB6Dumps\Nested5.bin" />
+    <EmbeddedResource Include="VB6Dumps\simple1.bin" />
+    <EmbeddedResource Include="VB6Dumps\simple2.bin" />
+    <EmbeddedResource Include="VB6Dumps\simple3.bin" />
+    <EmbeddedResource Include="VB6Dumps\TwoDims1.bin" />
+    <EmbeddedResource Include="VB6Dumps\TwoDims2.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DCM12Serializer\DCM12Serializer.csproj">
+      <Project>{6AFAF340-60FF-4CF7-A567-F86AAF2F34BD}</Project>
+      <Name>DCM12Serializer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
