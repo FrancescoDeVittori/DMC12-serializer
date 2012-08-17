@@ -6,7 +6,6 @@ For a brief overview of this project please refer to: -todo-
 
 #### DCM12-Serializer handles (besides the obvious stuff):
 
-
 - Nested structures
 - One-dimensional dynamic-length arrays
 - One-dimensional dynamic-length n-based arrays
@@ -15,8 +14,7 @@ For a brief overview of this project please refer to: -todo-
 - Fixed-length strings
 - Variants (with some limitations)
 
-Known limitations:
----
+#### Known limitations:
 
 - VB6 classes are not supported (they are not serializable with Put/Get anyways)
 - Circular/recursive structures are not supported (not supported by VB6)
@@ -25,14 +23,11 @@ Known limitations:
 - Dynamic arrays with more than two dimensions are not supported
 - Structures and arrays in Variant fields are not deserialized
 
-License
----
+#### License
 
 Distributed under the MIT license. Copyright (c) 2006-2012 Francesco De Vittori, Board International SA
 
-
-Usage
----
+#### Usage
 
 Assuming you have this UDT in VB6:
 
@@ -61,8 +56,7 @@ You deserialize in VB6 with the Get method:
 -todo-
 
 
-Attributes
-==========
+#### Attributes
 
 DMC12Serializer defines a few attributes to handle special cases:
 
