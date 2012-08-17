@@ -4,8 +4,8 @@ DMC12-serializer
 A library to help those poor souls still stuck in the dark ages of Visual Basic 6. DCM12-Serializer loads VB6 Universal Data Types (structs) into .NET objects, and produces VB6-compatible dumps.
 For a brief overview of this project please refer to: -todo-
 
-DCM12-Serializer handles (besides the obvious stuff):
----
+### DCM12-Serializer handles (besides the obvious stuff):
+
 
 - Nested structures
 - One-dimensional dynamic-length arrays
