@@ -1,11 +1,11 @@
 DMC12-serializer
 ================
 
-A serializer that translates VB6 Universal Data Types (structs) to .NET classes and viceversa.
-For a brief overview of the project please refer to: -todo-
+A library to help those poor souls still stuck in the dark ages of Visual Basic 6. DCM12-Serializer loads VB6 Universal Data Types (structs) into .NET objects, and produces VB6-compatible dumps.
+For a brief overview of this project please refer to: -todo-
 
-Handles (besides the obvious stuff):
-====================================
+DCM12-Serializer handles (besides the obvious stuff):
+---
 
 - Nested structures
 - One-dimensional dynamic-length arrays
@@ -16,30 +16,31 @@ Handles (besides the obvious stuff):
 - Variants (with some limitations)
 
 Known limitations:
-==================
+---
 
-- Does not support VB6 classes (not serializable with Put/Get anyways)
+- VB6 classes are not supported (they are not serializable with Put/Get anyways)
 - Circular/recursive structures are not supported (not supported by VB6)
-- DateTime objects may be represented with slight differences because of floating-point rounding errors (but the resulting objects are equals to the millisecond)
+- DateTimes may be represented with slight differences because of floating-point rounding errors (but the resulting objects are equals to the millisecond)
 - Fixed-length arrays with more than one dimension are not supported
 - Dynamic arrays with more than two dimensions are not supported
 - Structures and arrays in Variant fields are not deserialized
 
 License
-=======
+---
 
 Distributed under the MIT license. Copyright (c) 2006-2012 Francesco De Vittori, Board International SA
 
 
 Usage
-=====
+---
 
-You define a UDT in VB6:
+Assuming you have this UDT in VB6:
 
 -todo-
 
-In .NET you define a class with the same shape as the VB6 UDT. Please note that I said 'class', not 'struct'.
-Fields must be exposed as public properties, with get and set method. The class (and any referenced class) must have a public parameterless constructor.
+You first have to define a .NET class with the same shape as the VB6 UDT. Please note that I said 'class', not 'struct'.
+Fields must be exposed as public properties (in the same order) with public get and set. The class (and any referenced class) must have a public parameterless constructor.
+The types must match in size: int becomes short, long becomes int, etc.
 
 -todo-
 
@@ -47,7 +48,7 @@ You serialize the VB6 UDT (Universal Data Type) with the Put method:
 
 -todo-
 
-You deserialize from C# using DMC12 Serializer:
+In .NET, you deserialize using DMC12 Serializer:
 
 -todo-
 
