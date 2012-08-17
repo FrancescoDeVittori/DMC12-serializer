@@ -1,4 +1,4 @@
-DMC12-serializer
+DMC12-Serializer
 ================
 
 A library to help those poor souls still stuck in the dark ages of Visual Basic 6. DMC12-Serializer loads VB6 Universal Data Types (structs) into .NET objects, and produces VB6-compatible dumps.
