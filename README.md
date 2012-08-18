@@ -1,7 +1,7 @@
 DMC12-Serializer
 ================
 
-A library to help those poor souls still stuck in the dark ages of Visual Basic 6. DMC12-Serializer loads VB6 Universal Data Types (structs) into .NET objects, and produces VB6-compatible dumps.
+A library to help those poor souls still stuck in the dark ages of Visual Basic 6. DMC12-Serializer loads VB6 UDTs (Universal Data Types, i.e. structs) into .NET objects, and produces VB6-compatible dumps.
 
 The project is named after the famous De Lorean from Back to the Future. For a brief overview of this project please refer to: -todo-
 
@@ -28,31 +28,48 @@ The project is named after the famous De Lorean from Back to the Future. For a b
 
 Distributed under the MIT license. Copyright (c) 2006-2012 Francesco De Vittori, Board International SA
 
-#### Usage
+#### Basic Usage
 
 Assuming you have this UDT in VB6:
 
--todo-
+    Type Monster
+        Name as String
+        Legs as Integer
+        Victims() as String
+        BirthDate as Date
+    End Type
 
-You first have to define a .NET class with the same shape as the VB6 UDT. Please note that I said 'class', not 'struct'.
+You first define a .NET class with the same shape. Please note that I said 'class', not 'struct'.
 Fields must be exposed as public properties (in the same order) with public get and set. The class (and any referenced class) must have a public parameterless constructor.
 The types must match in size: int becomes short, long becomes int, etc.
 
--todo-
+    public class Monster
+    {
+        public string Name { get; set; }
+        public short Legs { get; set; }
+        public string[] Victims { get; set; }
+        public DateTime BirthDate { get; set; }
+    }
 
-You serialize the VB6 UDT (Universal Data Type) with the Put method:
-
--todo-
-
-In .NET, you deserialize using DMC12 Serializer:
-
--todo-
-
-You serialize from C# using DCM12Serializer:
+You serialize the VB6 UDT with the Put method:
 
 -todo-
 
-You deserialize in VB6 with the Get method:
+In .NET, you deserialize the structure using DMC12 Serializer:
+
+    var fs = File.OpenRead("myfile.bin");
+    var serializer = new DMC12Serializer.DMC12Serializer();
+    var monster = (Monster)(serializer.Deserialize(fs, typeof(Monster)));
+
+You can pass any kind of Stream, or a byte array of you prefer.
+To go in the opposite direction, you serialize from C# using DCM12Serializer:
+
+
+    var fs = File.OpenWrite("myfile.bin");
+    var serializer = new DMC12Serializer.DMC12Serializer();
+    serializer.Serialize(fs, myMonster);
+
+You can now load the structure in VB6 with the Get method:
 
 -todo-
 
@@ -61,6 +78,6 @@ You deserialize in VB6 with the Get method:
 
 DMC12Serializer defines a few attributes to handle special cases:
 
-DoNotSerialize: -todo-
-DynamicLength: -todo-
-FixedLength: -todo-
+##### DoNotSerialize -todo-
+##### DynamicLength: -todo-
+##### FixedLength: -todo-
