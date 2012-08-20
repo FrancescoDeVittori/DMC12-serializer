@@ -3,7 +3,7 @@ DMC12-Serializer
 
 A library to help those poor souls still stuck in the dark ages of Visual Basic 6. DMC12-Serializer loads VB6 UDTs (Universal Data Types, i.e. structs) into .NET objects, and produces VB6-compatible dumps.
 
-The project is named after the famous De Lorean from Back to the Future. [Here](http://www.frenk.com/todo) is how the project was born.
+The project is named after the famous De Lorean from Back to the Future. [Here](http://www.frenk.com/2012/08/back-to-the-future/) is how the project was born.
 
 #### DMC12-Serializer handles (besides the obvious stuff):
 
